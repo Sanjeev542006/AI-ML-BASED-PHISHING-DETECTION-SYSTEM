@@ -1,0 +1,2 @@
+import { BarChart3, FileText, Globe2, LayoutDashboard, Mail, MessageSquare, Settings, ShieldAlert } from 'lucide-react'
+export const navigation = [['Dashboard', '/', LayoutDashboard], ['URL Scanner', '/url-scanner', Globe2], ['Email Scanner', '/email-scanner', Mail], ['SMS Scanner', '/sms-scanner', MessageSquare], ['Threat Intelligence', '/threat-intelligence', ShieldAlert], ['Analytics', '/analytics', BarChart3], ['Reports', '/reports', FileText], ['Settings', '/settings', Settings]] as const
