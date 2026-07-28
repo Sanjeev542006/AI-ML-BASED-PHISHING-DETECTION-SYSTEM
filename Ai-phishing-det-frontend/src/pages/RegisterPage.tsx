@@ -34,21 +34,21 @@ export function RegisterPage() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', display: 'grid', placeItems: 'center', background: '#0f172a', padding: '20px' }}>
-      <div className="card" style={{ width: '100%', maxWidth: '460px', padding: '32px' }}>
+    <div style={{ minHeight: '100vh', display: 'grid', placeItems: 'center', background: '#080e17', padding: '20px' }}>
+      <div className="card" style={{ width: '100%', maxWidth: '460px', padding: '32px', background: '#0f1c2e', border: '1px solid #162840', boxShadow: '0 16px 40px #02061750' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '24px' }}>
           <div className="brand-mark">
             <ShieldCheck size={22} color="white" />
           </div>
           <span style={{ fontSize: '22px', fontWeight: 700, color: '#f8fafc' }}>PhishShield</span>
-          <small style={{ fontFamily: 'IBM Plex Mono', fontSize: '10px', color: '#60a5fa', border: '1px solid #2451a1', padding: '2px 5px', borderRadius: '4px' }}>AI</small>
+          <small style={{ fontFamily: 'IBM Plex Mono', fontSize: '10px', color: '#34d399', border: '1px solid #059669', background: '#064e3b40', padding: '2px 5px', borderRadius: '4px' }}>AI</small>
         </div>
 
         <h2 style={{ fontSize: '20px', marginBottom: '6px', color: '#f8fafc' }}>Create an account</h2>
-        <p style={{ color: '#8292a9', fontSize: '12px', marginBottom: '24px' }}>Get started with AI-driven threat analysis</p>
+        <p style={{ color: '#94a3b8', fontSize: '12px', marginBottom: '24px' }}>Get started with AI-driven threat analysis</p>
 
         {error && (
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', background: '#7f1d1d33', border: '1px solid #7f1d1d', color: '#fca5a5', padding: '10px 12px', borderRadius: '8px', fontSize: '12px', marginBottom: '18px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', background: '#88133740', border: '1px solid #9f1239', color: '#fca5a5', padding: '10px 12px', borderRadius: '8px', fontSize: '12px', marginBottom: '18px' }}>
             <AlertCircle size={16} />
             <span>{error}</span>
           </div>
@@ -66,7 +66,7 @@ export function RegisterPage() {
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                   placeholder="First name"
-                  style={{ width: '100%', background: '#0f192b', border: '1px solid #34445d', borderRadius: '8px', color: '#e2e8f0', outline: 'none', padding: '10px 10px 10px 38px', fontSize: '13px' }}
+                  style={{ width: '100%', background: '#08111d', border: '1px solid #1c3250', borderRadius: '8px', color: '#e2e8f0', outline: 'none', padding: '10px 10px 10px 38px', fontSize: '13px' }}
                 />
               </div>
             </label>
@@ -81,7 +81,7 @@ export function RegisterPage() {
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
                   placeholder="Last name"
-                  style={{ width: '100%', background: '#0f192b', border: '1px solid #34445d', borderRadius: '8px', color: '#e2e8f0', outline: 'none', padding: '10px 10px 10px 38px', fontSize: '13px' }}
+                  style={{ width: '100%', background: '#08111d', border: '1px solid #1c3250', borderRadius: '8px', color: '#e2e8f0', outline: 'none', padding: '10px 10px 10px 38px', fontSize: '13px' }}
                 />
               </div>
             </label>
@@ -97,7 +97,7 @@ export function RegisterPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="name@company.com"
-                style={{ width: '100%', background: '#0f192b', border: '1px solid #34445d', borderRadius: '8px', color: '#e2e8f0', outline: 'none', padding: '10px 10px 10px 38px', fontSize: '13px' }}
+                style={{ width: '100%', background: '#08111d', border: '1px solid #1c3250', borderRadius: '8px', color: '#e2e8f0', outline: 'none', padding: '10px 10px 10px 38px', fontSize: '13px' }}
               />
             </div>
           </label>
@@ -113,7 +113,7 @@ export function RegisterPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                style={{ width: '100%', background: '#0f192b', border: '1px solid #34445d', borderRadius: '8px', color: '#e2e8f0', outline: 'none', padding: '10px 10px 10px 38px', fontSize: '13px' }}
+                style={{ width: '100%', background: '#08111d', border: '1px solid #1c3250', borderRadius: '8px', color: '#e2e8f0', outline: 'none', padding: '10px 10px 10px 38px', fontSize: '13px' }}
               />
             </div>
           </label>
@@ -129,9 +129,9 @@ export function RegisterPage() {
           </button>
         </form>
 
-        <div style={{ marginTop: '24px', textAlign: 'center', fontSize: '12px', color: '#8292a9' }}>
+        <div style={{ marginTop: '24px', textAlign: 'center', fontSize: '12px', color: '#94a3b8' }}>
           Already have an account?{' '}
-          <Link to="/login" style={{ color: '#60a5fa', fontWeight: 600, textDecoration: 'none' }}>
+          <Link to="/login" style={{ color: '#34d399', fontWeight: 600, textDecoration: 'none' }}>
             Sign in
           </Link>
         </div>

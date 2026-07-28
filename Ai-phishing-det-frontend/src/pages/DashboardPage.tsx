@@ -128,15 +128,15 @@ export function DashboardPage() {
                   <AreaChart data={trend}>
                     <defs>
                       <linearGradient id="fill" x1="0" x2="0" y1="0" y2="1">
-                        <stop offset="0" stopColor="#2563eb" stopOpacity=".35" />
-                        <stop offset="1" stopColor="#2563eb" stopOpacity="0" />
+                        <stop offset="0" stopColor="#ef4444" stopOpacity=".35" />
+                        <stop offset="1" stopColor="#ef4444" stopOpacity="0" />
                       </linearGradient>
                     </defs>
-                    <CartesianGrid stroke="#27354a" vertical={false} />
-                    <XAxis dataKey="day" stroke="#718096" tickLine={false} axisLine={false} />
-                    <YAxis stroke="#718096" tickLine={false} axisLine={false} />
-                    <Tooltip contentStyle={{ background: '#172237', border: '1px solid #334155', borderRadius: 10 }} />
-                    <Area dataKey="threats" stroke="#3b82f6" strokeWidth={3} fill="url(#fill)" />
+                    <CartesianGrid stroke="var(--border-card)" vertical={false} />
+                    <XAxis dataKey="day" stroke="var(--text-dim)" tickLine={false} axisLine={false} />
+                    <YAxis stroke="var(--text-dim)" tickLine={false} axisLine={false} />
+                    <Tooltip contentStyle={{ background: 'var(--bg-card)', border: '1px solid var(--border-card)', borderRadius: 10, color: 'var(--text-main)' }} />
+                    <Area dataKey="threats" stroke="#ef4444" strokeWidth={3} fill="url(#fill)" />
                   </AreaChart>
                 </ResponsiveContainer>
               </div>

@@ -1,11 +1,13 @@
 import { useState, type ReactNode } from 'react'
-import { Bell, ChevronDown, LogOut, Menu, Search, ShieldCheck, X } from 'lucide-react'
+import { Bell, ChevronDown, LogOut, Menu, Moon, Search, ShieldCheck, Sun, X } from 'lucide-react'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { navigation } from '../constants/navigation'
 import { useAuth } from '../context/AuthContext'
+import { useTheme } from '../context/ThemeContext'
 
 function Sidebar({ open, close }: { open: boolean; close: () => void }) {
   const { user, logout } = useAuth()
+  const { theme, toggleTheme } = useTheme()
   const navigate = useNavigate()
 
   const handleLogout = async () => {
@@ -57,32 +59,41 @@ function Sidebar({ open, close }: { open: boolean; close: () => void }) {
           ))}
         </nav>
         <div className="sidebar-bottom">
-          <div className="user" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
+          <div className="user" style={{ display: 'flex', itemsCenter: 'center', justifyContent: 'space-between', gap: '8px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '9px', overflow: 'hidden' }}>
               <div className="avatar">{getInitials()}</div>
               <div style={{ minWidth: 0 }}>
                 <b style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', display: 'block' }}>{getDisplayName()}</b>
-                <span style={{ fontSize: '10px', color: '#718096' }}>{user?.role || 'User'}</span>
+                <span style={{ fontSize: '10px', color: 'var(--text-dim)' }}>{user?.role || 'User'}</span>
               </div>
             </div>
-            <button
-              onClick={handleLogout}
-              title="Sign out"
-              style={{
-                background: 'none',
-                border: 0,
-                color: '#94a3b8',
-                cursor: 'pointer',
-                padding: '6px',
-                borderRadius: '6px',
-                display: 'grid',
-                placeItems: 'center',
-              }}
-              onMouseOver={(e) => (e.currentTarget.style.color = '#ef4444')}
-              onMouseOut={(e) => (e.currentTarget.style.color = '#94a3b8')}
-            >
-              <LogOut size={18} />
-            </button>
+            <div style={{ display: 'flex', gap: '2px' }}>
+              <button
+                className="theme-toggle"
+                onClick={toggleTheme}
+                title={theme === 'dark' ? 'Switch to Day Mode (Light)' : 'Switch to Night Mode (Dark)'}
+              >
+                {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
+              </button>
+              <button
+                onClick={handleLogout}
+                title="Sign out"
+                style={{
+                  background: 'none',
+                  border: 0,
+                  color: 'var(--text-dim)',
+                  cursor: 'pointer',
+                  padding: '6px',
+                  borderRadius: '6px',
+                  display: 'grid',
+                  placeItems: 'center',
+                }}
+                onMouseOver={(e) => (e.currentTarget.style.color = 'var(--risk-high)')}
+                onMouseOut={(e) => (e.currentTarget.style.color = 'var(--text-dim)')}
+              >
+                <LogOut size={18} />
+              </button>
+            </div>
           </div>
         </div>
       </aside>
@@ -94,6 +105,7 @@ export function AppLayout({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false)
   const location = useLocation()
   const { user } = useAuth()
+  const { theme, toggleTheme } = useTheme()
   const title = navigation.find((item) => item[1] === location.pathname)?.[0] ?? 'Workspace'
 
   const getInitials = () => {
@@ -116,6 +128,13 @@ export function AppLayout({ children }: { children: ReactNode }) {
             <b>{title}</b>
           </div>
           <div className="header-actions">
+            <button
+              className="theme-toggle"
+              onClick={toggleTheme}
+              title={theme === 'dark' ? 'Switch to Day Mode (Light)' : 'Switch to Night Mode (Dark)'}
+            >
+              {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
+            </button>
             <button>
               <Search size={19} />
             </button>

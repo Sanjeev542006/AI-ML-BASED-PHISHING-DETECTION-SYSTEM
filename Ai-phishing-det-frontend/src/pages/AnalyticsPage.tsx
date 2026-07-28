@@ -133,11 +133,11 @@ export function AnalyticsPage() {
               <div className="chart">
                 <ResponsiveContainer width="100%" height="100%">
                   <Chart data={trend}>
-                    <CartesianGrid stroke="#27354a" vertical={false} />
-                    <XAxis dataKey="day" stroke="#718096" tickLine={false} axisLine={false} />
-                    <YAxis stroke="#718096" tickLine={false} axisLine={false} />
-                    <Tooltip contentStyle={{ background: '#172237', border: '1px solid #334155', borderRadius: 10 }} />
-                    <Area dataKey="scans" stroke="#22c55e" strokeWidth={3} fill="#22c55e22" />
+                    <CartesianGrid stroke="var(--border-card)" vertical={false} />
+                    <XAxis dataKey="day" stroke="var(--text-dim)" tickLine={false} axisLine={false} />
+                    <YAxis stroke="var(--text-dim)" tickLine={false} axisLine={false} />
+                    <Tooltip contentStyle={{ background: 'var(--bg-card)', border: '1px solid var(--border-card)', borderRadius: 10, color: 'var(--text-main)' }} />
+                    <Area dataKey="scans" stroke="#ef4444" strokeWidth={3} fill="#ef444425" />
                   </Chart>
                 </ResponsiveContainer>
               </div>
