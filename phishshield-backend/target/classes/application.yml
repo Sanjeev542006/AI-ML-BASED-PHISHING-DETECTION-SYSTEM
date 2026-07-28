@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: phishshield-backend
+  datasource:
+    url: jdbc:postgresql://localhost:5432/phishshield_db
+    username: postgres
+    password: 2006
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    context-path: /api
+app:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173,chrome-extension://*,moz-extension://*}
+  security:
+    jwt:
+      secret: ${JWT_SECRET:replace-this-with-a-secure-256-bit-secret-key-before-production}
+      expiration-ms: ${JWT_EXPIRATION_MS:3600000}
+      refresh-expiration-ms: ${JWT_REFRESH_EXPIRATION_MS:604800000}

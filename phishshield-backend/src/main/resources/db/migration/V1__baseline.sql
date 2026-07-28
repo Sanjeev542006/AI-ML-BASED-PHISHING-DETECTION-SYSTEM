@@ -1,0 +1,1 @@
+-- Initial Flyway baseline. Domain tables will be added in subsequent migrations.

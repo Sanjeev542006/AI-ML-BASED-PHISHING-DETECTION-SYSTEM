@@ -1,0 +1,13 @@
+com\phishshield\config\OpenApiConfig.class
+com\phishshield\repository\package-info.class
+com\phishshield\config\JpaConfig.class
+com\phishshield\service\impl\package-info.class
+com\phishshield\detector\package-info.class
+com\phishshield\util\package-info.class
+com\phishshield\dto\package-info.class
+com\phishshield\PhishShieldApplication.class
+com\phishshield\exception\GlobalExceptionHandler.class
+com\phishshield\controller\package-info.class
+com\phishshield\mapper\package-info.class
+com\phishshield\service\package-info.class
+com\phishshield\entity\BaseEntity.class
